@@ -1,0 +1,5 @@
+version: 0.1
+name: Plugin Test Plox
+main: com.jkdev.plugin.Main
+author: JkDev
+description: Bien chido pe

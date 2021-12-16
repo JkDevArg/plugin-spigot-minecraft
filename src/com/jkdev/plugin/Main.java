@@ -2,17 +2,14 @@ package com.jkdev.plugin;
 import java.io.File;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.md_5.bungee.api.ChatColor;
 
-public class Main extends JavaPlugin implements Listener{
+public class Main extends JavaPlugin{
 	
 	public String ruta;
 	
@@ -20,8 +17,6 @@ public class Main extends JavaPlugin implements Listener{
 	public void onEnable() {
 		System.out.println("Mi primer plugin en Maincraft");
 		insertConfig();
-		Bukkit.getPluginManager().registerEvents(this, this);
-		
 	}
 	
 	@Override
@@ -29,14 +24,6 @@ public class Main extends JavaPlugin implements Listener{
 		System.out.println("Plugin Desactivado Bye bye!");
 	}
 	
-	
-	@EventHandler
-	public void OnMove(PlayerMoveEvent e) {
-		Player player = e.getPlayer();
-		if (!player.hasPermission("salud.mover")) {
-			e.setCancelled(true);
-		}
-	}
 	
 	
 	@EventHandler
